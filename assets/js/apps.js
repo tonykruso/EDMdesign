@@ -17,7 +17,7 @@ var monthlyRate = ""
 database.ref().on("child_added", function(snapshot) {
 var data = snapshot.val()
 console.log(data)
-    
+
 /* name = snapshot.val().name
 role = snapshot.val().role
 startDate = snapshot.val().startDate
@@ -26,7 +26,7 @@ monthlyRate = snapshot.val().monthlyRate */
 createEmployees(data)
 })
 function createEmployees(data) {
-    var employee = data 
+    var employee = data
     console.log(employee.length)
     name = employee.name
     role = employee.role
@@ -55,7 +55,7 @@ function createEmployees(data) {
     $("#employee").append(row)
 }
 
-$("#submit").on("click", function(event) {
+$(".submitForm").on("click", function(event) {
    event.preventDefault()
     name = $("#name").val().trim()
     role = $("#role").val().trim()
@@ -82,7 +82,7 @@ $("#submit").on("click", function(event) {
 
  //  dataAdded: firebase.database.ServerValue.TIMESTAMP
 
-  //child added and child changes 
+  //child added and child changes
   dataRef.ref().on("child_added",function(childSnapshot){
       console.log(childSnapshot.val().name);
   },function(errorObject){
